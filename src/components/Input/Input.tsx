@@ -7,12 +7,14 @@ interface InputProps {
   type: "password" | "text" | "number";
   clearable: boolean;
   passwordVisibility: boolean;
+  shadow: boolean;
 }
 
 export default function Input({
   type,
   clearable,
   passwordVisibility,
+  shadow,
 }: InputProps) {
   const [isShowPassword, setIsShowPassword] = useState(passwordVisibility);
   const [inputValue, setInputValue] = useState("");
@@ -29,7 +31,7 @@ export default function Input({
   return (
     <div className={s.box}>
       <input
-        className={s.field}
+        className={`${s.field} ${shadow && s.shadow}`}
         type={isShowPassword ? "text" : type}
         value={inputValue}
         placeholder={`enter your ${type}`}

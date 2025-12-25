@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-.logo {
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -16,8 +16,31 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+} */
+
+h4 {
+  margin-top: 32px;
+  background-color: #97a5f1;
+  border-radius: 24px 24px 8px 8px;
+  padding: 8px 0;
 }
 
+.section-item-list {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, minmax(200px, 30%));
+  gap: 24px 12px;
+  margin-top: 12px;
+}
+
+legend {
+  padding: 0 8px;
+}
+
+h5 {
+  margin-top: 32px;
+  border-bottom: 2px solid black;
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -33,10 +56,10 @@
   }
 }
 
-.card {
+/* .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
-}
+} */

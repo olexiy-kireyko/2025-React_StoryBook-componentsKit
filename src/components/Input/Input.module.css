@@ -1,4 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .box {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
   position: relative;
   margin: 24px;
   width: 240px;
@@ -6,12 +15,19 @@
 
 .field {
   border: 1px solid rgb(67, 63, 63);
-
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
   border-radius: 4px;
   padding: 16px 24px;
   width: 240px;
+  outline: none;
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.noborder {
+  border: none;
 }
 
 .field::placeholder {
