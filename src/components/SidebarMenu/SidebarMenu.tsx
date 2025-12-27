@@ -1,5 +1,7 @@
 import s from "./SidebarMenu.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoMdClose } from "react-icons/io";
 
 interface Item {
   id: string;
@@ -11,20 +13,17 @@ interface SidebarMenu {
   list: Item[];
   expandedId: string;
   isShowMenu: boolean;
+  placing: string;
 }
 
 export default function SidebarMenu({
   list,
   expandedId = "none",
   isShowMenu = false,
+  placing = "right",
 }: SidebarMenu) {
   const [stateExpandedId, setStateExpandedId] = useState(expandedId);
   const [isShow, setIsShow] = useState(isShowMenu);
-  useEffect(() => {
-    setTimeout(() => {
-      setIsShow(true);
-    }, 10);
-  }, []);
 
   const handleExpend = (e: React.MouseEvent<HTMLLIElement>) => {
     let id = e.currentTarget.dataset.id;
@@ -36,8 +35,27 @@ export default function SidebarMenu({
     setStateExpandedId(id);
   };
 
+  function handleClose() {
+    setIsShow(!isShow);
+  }
+
   return (
-    <div className={`${s.box} ${isShow ? s.show : s.hide} `}>
+    <div
+      className={`${s.box} ${isShow ? s.show : s.hide} ${
+        placing === "left" && s.left
+      }`}
+    >
+      <div className={`${s.showBox} ${placing === "left" && s.showBoxLeft}`}>
+        <div className={s.closeBtn} onClick={handleClose}>
+          {isShow ? <IoMdClose /> : <RxHamburgerMenu />}
+        </div>
+        <ul>
+          <li>{isShow ? "h" : "s"}</li>
+          <li>{isShow ? "i" : "h"}</li>
+          <li>{isShow ? "d" : "o"}</li>
+          <li>{isShow ? "e" : "w"}</li>
+        </ul>
+      </div>
       <ul className={s.list}>
         {list.map((item) => {
           return (

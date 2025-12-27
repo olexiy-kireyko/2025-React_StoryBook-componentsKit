@@ -18,29 +18,71 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 } */
 
+header {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  h3 {
+    text-align: start;
+  }
+}
+
 h4 {
   margin-top: 32px;
   background-color: #97a5f1;
-  border-radius: 24px 24px 8px 8px;
+  border-radius: 4px;
   padding: 8px 0;
 }
 
 .section-item-list {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(3, minmax(200px, 30%));
+  grid-template-columns: repeat(2, minmax(400px, 45%));
   gap: 24px 12px;
   margin-top: 12px;
 }
 
-legend {
-  padding: 0 8px;
+.section-item {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(102, 95, 95);
+  border-radius: 4px;
+  ul {
+    list-style: square;
+    text-align: start;
+  }
+}
+
+.sidebar-box {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.sidebar-item {
+  padding: 160px 24px;
+  justify-content: flex-start;
+}
+
+.left {
+  border-left: none;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  justify-content: flex-end;
+}
+
+.right {
+  border-right: none;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
 
 h5 {
   margin-top: 32px;
   border-bottom: 2px solid black;
 }
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
