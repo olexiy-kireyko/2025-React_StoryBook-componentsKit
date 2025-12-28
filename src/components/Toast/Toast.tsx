@@ -7,6 +7,7 @@ interface Toast {
   text: string;
   duration: number;
   closing: boolean;
+  placing: string;
 }
 
 export default function Toast({
@@ -14,6 +15,7 @@ export default function Toast({
   text,
   duration,
   closing = false,
+  placing = "right",
 }: Toast) {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function Toast({
     <div
       className={`${s.box} ${visible ? s.show : s.hide} ${
         type === "success" ? s.success : s.error
-      }`}
+      } ${placing === "left" && s.left}`}
     >
       <div className={s.message}>{text}</div>
       {closing && <IoIosClose className={s.close} onClick={handleClose} />}

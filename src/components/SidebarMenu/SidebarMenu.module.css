@@ -1,4 +1,7 @@
 .box {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
   z-index: 100;
   display: flex;
   justify-content: center;
@@ -12,6 +15,7 @@
   transition: transform cubic-bezier(0.39, 0.575, 0.565, 1) 1000ms;
   border-radius: 8px 0px 0px 8px;
 }
+
 .box.left {
   left: 0px;
   border-radius: 0px 8px 8px 0px;
@@ -20,6 +24,7 @@
 .show {
   transform: translateX(0px);
 }
+
 .show.left {
   transform: translateX(0px);
 }
@@ -27,6 +32,7 @@
 .hide {
   transform: translateX(300px);
 }
+
 .hide.left {
   transform: translateX(-300px);
 }
@@ -39,6 +45,7 @@
   left: -24px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 4px;
   .closeBtn {
     border-radius: 4px;
@@ -53,6 +60,7 @@
     font-size: 14px;
   }
 }
+
 .showBox.showBoxLeft {
   left: auto;
   right: -24px;
@@ -93,6 +101,7 @@
     }
   }
 }
+
 .left .item {
   border-radius: 0 6px 6px 0;
 }

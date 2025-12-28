@@ -5,19 +5,6 @@
   text-align: center;
 }
 
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-} */
-
 header {
   display: flex;
   gap: 32px;
@@ -55,6 +42,11 @@ h4 {
   }
 }
 
+.toasts .section-item {
+  padding: 12px 24px;
+  justify-content: space-between;
+}
+
 .sidebar-box {
   position: relative;
   overflow-x: hidden;
@@ -83,6 +75,24 @@ h5 {
   border-bottom: 2px solid black;
 }
 
+.toasts .section-item {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.toast-button {
+  background-color: #97a5f1;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  &:hover {
+    background-color: #435099;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -92,16 +102,14 @@ h5 {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.logo-box {
+  margin-top: 32px;
+  width: 100%;
+  border-top: 4px solid #2c5514;
 }
 
-/* .card {
-  padding: 2em;
+.logo {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  animation: logo-spin infinite 20s linear;
 }
-
-.read-the-docs {
-  color: #888;
-} */

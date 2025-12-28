@@ -1,12 +1,14 @@
 .box {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
   z-index: 100;
-  cursor: none;
   display: grid;
   justify-content: center;
   align-items: center;
   position: absolute;
   bottom: 0;
-  right: -300px;
+  right: 0;
   background-color: rgb(231 232 233 / 90%);
   padding: 24px;
   width: 300px;
@@ -14,12 +16,21 @@
   transition: transform cubic-bezier(0.39, 0.575, 0.565, 1) 1000ms;
 }
 
+.box.left {
+  right: none;
+  left: 0;
+}
+
 .show {
-  transform: translateX(-300px);
+  transform: translateX(0px);
 }
 
 .hide {
   transform: translateX(300px);
+}
+
+.hide.left {
+  transform: translateX(-300px);
 }
 
 .success::after {
@@ -32,6 +43,21 @@
   height: 100%;
 }
 
+.left.success {
+  &::after {
+    content: none;
+  }
+  &::before {
+    content: "";
+    background-color: #449515;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100%;
+  }
+}
+
 .error::after {
   content: "";
   background-color: #c3442b;
@@ -42,12 +68,31 @@
   height: 100%;
 }
 
+.left.error {
+  &::after {
+    content: none;
+  }
+  &::before {
+    content: "";
+    background-color: #c3442b;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100%;
+  }
+}
+
 .message {
   color: rgb(36, 8, 8);
 }
 
 .close {
   position: absolute;
+  width: 20px;
   top: 12px;
   right: 12px;
+  &:hover {
+    background-color: rgb(91, 91, 122);
+  }
 }

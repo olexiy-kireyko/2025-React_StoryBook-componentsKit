@@ -35,9 +35,9 @@ export default function SidebarMenu({
     setStateExpandedId(id);
   };
 
-  function handleClose() {
+  const handleClose = () => {
     setIsShow(!isShow);
-  }
+  };
 
   return (
     <div

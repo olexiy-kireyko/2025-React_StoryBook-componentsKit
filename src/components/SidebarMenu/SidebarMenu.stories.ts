@@ -13,35 +13,52 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Menu: Story = {
+export const MenuLeft: Story = {
   args: {
+    placing: "left",
     list: [
-      { id: "ddd", name: "ff", itemChildren: ["1", "2", "3", "4"] },
-      { id: "add", name: "aaaff", itemChildren: ["1", "2", "3", "4", "5"] },
+      {
+        id: "aaa",
+        name: "Lorem ipsum",
+        itemChildren: ["dolor sit", "amet consectetur", "adipisicing", "elit"],
+      },
+      {
+        id: "aab",
+        name: "Commodi",
+        itemChildren: ["cupiditate", "alias", "vitae", "pariatur"],
+      },
+      {
+        id: "aac",
+        name: "Voluptatibus",
+        itemChildren: ["officiis", "alias", "veniam", "pariatur"],
+      },
     ],
     expandedId: "none",
-    isShowMenu: true,
+    isShowMenu: false,
   },
 };
 
-export const MenuExpanded: Story = {
+export const MenuRightExpanded: Story = {
   args: {
+    placing: "right",
     list: [
-      { id: "ddd", name: "ff", itemChildren: ["1", "2", "3", "4"] },
-      { id: "add", name: "aaaff", itemChildren: ["1", "2", "3", "4", "5"] },
+      {
+        id: "aaa",
+        name: "Lorem ipsum",
+        itemChildren: ["dolor sit", "amet consectetur", "adipisicing", "elit"],
+      },
+      {
+        id: "aab",
+        name: "Commodi",
+        itemChildren: ["cupiditate", "alias", "vitae", "pariatur"],
+      },
+      {
+        id: "aac",
+        name: "Voluptatibus",
+        itemChildren: ["officiis", "alias", "veniam", "pariatur"],
+      },
     ],
-    expandedId: "ddd",
-    isShowMenu: true,
-  },
-};
-
-export const MenuHided: Story = {
-  args: {
-    list: [
-      { id: "ddd", name: "ff", itemChildren: ["1", "2", "3", "4"] },
-      { id: "add", name: "aaaff", itemChildren: ["1", "2", "3", "4", "5"] },
-    ],
-    expandedId: "ddd",
+    expandedId: "aab",
     isShowMenu: false,
   },
 };

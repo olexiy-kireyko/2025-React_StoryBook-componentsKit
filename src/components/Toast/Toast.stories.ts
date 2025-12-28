@@ -13,29 +13,42 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Success: Story = {
-  args: {
-    type: "success",
-    text: "successed loading!",
-    duration: 2000,
-    closing: false,
-  },
-};
-
-export const SuccessClosing: Story = {
-  args: {
-    type: "success",
-    text: "successed loading!",
-    duration: 2000,
-    closing: true,
-  },
-};
-
-export const Error: Story = {
+export const ErrorLeft: Story = {
   args: {
     type: "error",
-    text: "errored loading!",
-    duration: 4000,
+    text: "Loading error",
+    duration: 3000,
+    closing: true,
+    placing: "left",
+  },
+};
+
+export const ErrorRight: Story = {
+  args: {
+    type: "error",
+    text: "Loading error",
+    duration: 3000,
+    closing: true,
+    placing: "right",
+  },
+};
+
+export const SuccessLeft: Story = {
+  args: {
+    type: "success",
+    text: "Loading successed",
+    duration: 3000,
+    closing: true,
+    placing: "left",
+  },
+};
+
+export const SuccessRightNonclosing: Story = {
+  args: {
+    type: "success",
+    text: "Loading successed",
+    duration: 3000,
     closing: false,
+    placing: "right",
   },
 };

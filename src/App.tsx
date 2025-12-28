@@ -1,13 +1,17 @@
-// import { useState } from "react";
-
 import "./App.css";
+
 import Toast from "../src/components/Toast/Toast";
 import Input from "../src/components/Input/Input";
 import SidebarMenu from "./components/SidebarMenu/SidebarMenu";
 
 import { BsEmojiSmile } from "react-icons/bs";
+import { useState } from "react";
 
 function App() {
+  const [isShowFirstToast, setIsShowFirstToast] = useState(false);
+  const [isShowSecondToast, setIsShowSecondToast] = useState(false);
+  const [isShowThirdToast, setIsShowThirdToast] = useState(false);
+  const [isShowFourthToast, setIsShowFourthToast] = useState(false);
   return (
     <>
       <header>
@@ -94,6 +98,7 @@ function App() {
           </div>
         </div>
       </section>
+
       <section>
         <h4>Inputs</h4>
         <h5>basic:</h5>
@@ -169,6 +174,21 @@ function App() {
               type="password"
               clearable={true}
               passwordVisibility={true}
+              shadow={false}
+            />
+          </div>
+
+          <div className="section-item">
+            <ul>
+              <li>type="number" </li>
+              <li> clearable="false"</li>
+              <li>passwordVisibility="false"</li>
+              <li>shadow="false"</li>
+            </ul>
+            <Input
+              type="number"
+              clearable={false}
+              passwordVisibility={false}
               shadow={false}
             />
           </div>
@@ -250,14 +270,149 @@ function App() {
               shadow={true}
             />
           </div>
+
+          <div className="section-item">
+            <ul>
+              <li>type="number" </li>
+              <li> clearable="false"</li>
+              <li>passwordVisibility="false"</li>
+              <li>shadow="true"</li>
+            </ul>
+            <Input
+              type="number"
+              clearable={false}
+              passwordVisibility={false}
+              shadow={true}
+            />
+          </div>
         </div>
       </section>
-      <Toast
-        type="error"
-        text="dhsjdhj dgdygy"
-        duration={2000}
-        closing={true}
-      />
+
+      <section>
+        <h4>Toasts</h4>
+        <div className="section-item-list toasts">
+          <div className="section-item">
+            <ul>
+              <li>type="error" </li>
+              <li>text="Loading error"</li>
+              <li>duration="3000"</li>
+              <li>closing="true"</li>
+              <li>placing="left"</li>
+            </ul>
+            <button
+              className="toast-button"
+              onClick={() => {
+                setIsShowFirstToast(true);
+                setTimeout(() => {
+                  setIsShowFirstToast(false);
+                }, 5000);
+              }}
+            >
+              Click for demonstration
+            </button>
+            {isShowFirstToast && (
+              <Toast
+                type="error"
+                text="Loading error"
+                duration={3000}
+                closing={true}
+                placing="left"
+              />
+            )}
+          </div>
+          <div className="section-item">
+            <ul>
+              <li>type="error" </li>
+              <li>text="Loading error"</li>
+              <li>duration="3000"</li>
+              <li>closing="true"</li>
+              <li>placing="right"</li>
+            </ul>
+            <button
+              className="toast-button"
+              onClick={() => {
+                setIsShowSecondToast(true);
+                setTimeout(() => {
+                  setIsShowSecondToast(false);
+                }, 5000);
+              }}
+            >
+              Click for demonstration
+            </button>
+            {isShowSecondToast && (
+              <Toast
+                type="error"
+                text="Loading error"
+                duration={3000}
+                closing={true}
+                placing="right"
+              />
+            )}
+          </div>
+          <div className="section-item">
+            <ul>
+              <li>type="success" </li>
+              <li>text="Loading successed"</li>
+              <li>duration="3000"</li>
+              <li>closing="true"</li>
+              <li>placing="left"</li>
+            </ul>
+            <button
+              className="toast-button"
+              onClick={() => {
+                setIsShowThirdToast(true);
+                setTimeout(() => {
+                  setIsShowThirdToast(false);
+                }, 5000);
+              }}
+            >
+              Click for demonstration
+            </button>
+            {isShowThirdToast && (
+              <Toast
+                type="success"
+                text="Loading successed"
+                duration={3000}
+                closing={true}
+                placing="left"
+              />
+            )}
+          </div>
+          <div className="section-item">
+            <ul>
+              <li>type="success" </li>
+              <li>text="Loading successed"</li>
+              <li>duration="3000"</li>
+              <li>closing="false"</li>
+              <li>placing="right"</li>
+            </ul>
+            <button
+              className="toast-button"
+              onClick={() => {
+                setIsShowFourthToast(true);
+                setTimeout(() => {
+                  setIsShowFourthToast(false);
+                }, 5000);
+              }}
+            >
+              Click for demonstration
+            </button>
+            {isShowFourthToast && (
+              <Toast
+                type="success"
+                text="Loading successed"
+                duration={3000}
+                closing={false}
+                placing="right"
+              />
+            )}
+          </div>
+        </div>
+      </section>
+
+      <div className="logo-box">
+        <img src="../src/assets/react.svg" alt="react-logo" className="logo" />
+      </div>
     </>
   );
 }
