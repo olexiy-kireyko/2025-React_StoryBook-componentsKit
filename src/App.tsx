@@ -411,7 +411,7 @@ function App() {
       </section>
 
       <div className="logo-box">
-        <img src="../src/assets/react.svg" alt="react-logo" className="logo" />
+        <img src="./src/assets/react.svg" alt="react-logo" className="logo" />
       </div>
     </>
   );
